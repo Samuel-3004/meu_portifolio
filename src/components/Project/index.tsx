@@ -30,11 +30,23 @@ export const Project = (): JSX.Element => {
         `https://api.github.com/users/${userData.githubUser}/repos?sort=created&direction=desc`
       );
 
+      const data2 = await fetch(
+        `https://api.github.com/users/M3KenzieGrupo7/repos?sort=created&direction=desc`
+      );
+
+      const data3 = await fetch(
+        `https://api.github.com/users/projeto-BiblioteKA-g25/repos?sort=created&direction=desc`
+      );
+
       const json = await data.json();
+      const json2 = await data2.json();
+      const json3 = await data3.json();
 
-      setRepositories(json);
+      const newJson = [...json, ...json2, ...json3];
 
-      return json;
+      setRepositories(newJson);
+
+      return newJson;
     };
 
     fetchData();
@@ -81,10 +93,7 @@ export const Project = (): JSX.Element => {
                 <FaGithub /> Github Code
               </ProjectLink>
               {repository.homepage && (
-                <ProjectLink
-                  target="_blank"
-                  href={repository.homepage}
-                >
+                <ProjectLink target="_blank" href={repository.homepage}>
                   <FaShare /> See demo
                 </ProjectLink>
               )}
