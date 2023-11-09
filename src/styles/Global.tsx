@@ -97,6 +97,7 @@ export const GlobalStyle = ({ children }: GlobalStyleProps): JSX.Element => {
       socialInstagram: "#CF50AC",
       socialFacebook: "#506CCF",
       socialLinkedin: "#0E76A8",
+      socialWhatsApp:"#25d366",
 
       whiteFixed: "#ffffff",
       mode: "#ffffff",

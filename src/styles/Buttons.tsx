@@ -146,6 +146,16 @@ export const Button = styled("button", {
         "&:hover": {
           backgroundColor: "$grey5",
         },
+        ["&.whatsapp"]: {
+          backgroundColor: "$socialWhatsApp",
+          borderColor: "$socialWhatsApp",
+          color: "$whiteFixed",
+          "&:hover": {
+            backgroundColor: "transparent",
+            borderColor: "$socialWhatsApp",
+            color: "$socialWhatsApp",
+          },
+        },
         "@mobile": {
           width: "5rem",
           height: "2.7rem",
